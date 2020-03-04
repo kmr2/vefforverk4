@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="is"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .rett {
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="/" title="Síða 1">Síða 1 </a> |
+        <a href="/sida2" title="Síða 2">Síða 2 </a></p> 
+    <h1>HTTP Protocol</h1>
+    <h3>Spurningar og svör</h3>
+    <a href="https://nam.inna.is/"> Aftur á forsíðu</a>
+    <!-- Svarið öllum spurningunum með því að setja <li class="rett">við rétta svarið</li -->
+    <ol>
+        <li>Hvað er það kallað þegar vafri (client) sendir fyrirspurn um að birta ákveðna vefsíðu á vefþjón (web server)?
+            <ul>
+                <li>Query</li>
+                <li class="rett">Request</li>
+                <li>Response</li>
+            </ul>
+        </li>
+        <li> Gefum okkur að vafri sendi fyrirspurn á vefþjón og vefþjónn
+ sendir til baka boð sem segir að allt hafi heppnast án villu.  Hvaða 
+status code fær vafrinn frá vefþjóninum?
+            <ul>
+                <li>100 OK</li>
+                <li class="rett"></li>200 OK</li>
+                <li>404 OK</li>
+            </ul>
+        </li>
+        <li> Hver er nýjast útgáfa HTTP staðalsins?
+            <ul>
+                <li>HTTP/1.0</li>
+                <li class="rett">HTTP/1.1</li>
+                <li>HTTP/2.0</li>
+            </ul>
+        </li>
+        <li> Hvað er sjálfgefið port á vöfrum?
+            <ul>
+                <li>88</li>
+                <li>80</li>
+                <li class="rett">8080</li>
+            </ul>
+        </li>
+        <li> Hvað er algengasta skráarsnið vefsíðna á Internetinu?
+            <ul>
+                <li>.pdf</li>
+                <li>.mp3</li>
+                <li class="rett">.html</li>
+            </ul>
+        </li>
+        <li> Hvert af eftirtöldu lýsir best tilgangi og hlutverki HTTP staðalsins?
+            <ul>
+                <li>HTTP staðalinn er notaður til meðhöndla samskipti póstþjóna (mail servers)</li>
+                <li class="rett">HTTP staðalinn er samskiptastaðall sem höndlar samskipti milli vafra (client) og vefþjóna (webservers)</li>
+                <li>HTTP staðalinn er neðsta lagið í 7 laga OSI staðlinum.</li>
+            </ul>
+        </li>
+        <li> Skiptu upp eftrifarandi vefslóð (URL) <b>http://www.mbl.is/frettir?a=2&amp;b=3</b>
+            <ul>
+                <li>protocol: Http protocool er það sem gerist milli client og server með request og response </li>
+                <li>host: http host er notað til að fólk muna vefsíðuna ístaðinn fyrir fullt af tölum og líka til að gefa domaininu nafn</li>
+                <li>query parameter: þetta kemur á eftir urlinu til að útskýra hvaða data er að fara, það er hægt að vita með því að sá '?' á enda urls</li>
+            </ul>
+        </li>
+        <li> Hvað er átt við með því þegar talað er um að HTTP staðallinn sé stateless protocol?
+            <ul>
+                <li>það þýðir að serverinn þarf ekki að geyma upplysingar sem fer í gegn </li>
+            </ul>
+        </li>
+        <li> Hvaða skýring passar við "GET Request"
+            <ul>
+                <li>GET sendir gögn á miðlara, krafan er ekki geymd í vinnsluminni og birtist ekki í vefslóð</li>
+                <li>GET sækir gögn sem beðið er um af miðlara, krafan birtist í vefslóðinni og er geymd í vinnsluminni vafrans</li>
+            </ul>
+        </li>
+        <li> Hvaða skýring passar við POST request?
+            <ul>
+                <li>POST sendir gögn á miðlara, krafan birtist ekki í vefslóð og fer ekki í vinnsluminnið (Cache)</li>
+                <li>POSTsækir gögn sem beðið er um af miðlara, krafan birtist í vefslóðinni og er geymd í vinnsluminni vafrans</li>
+            </ul>
+        </li>
+    </ol>
+
+</body></html>
