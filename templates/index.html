@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+    Vörulistinn
+{% endblock %} 
+
+{% block content %}
+    <h1> Vörulistinn </h1>
+    <section class="wrapper">
+    {% for item in vorur %}
+        <div class="vara">
+            <h2>{{ item[1] }}</h2>
+            <img src="/static/{{ item[2] }}">
+            <h3>verð: <a href="/add/{{ item[0] }}">{{ item[3] }}</a></h3>
+        </div>
+    {% endfor %}
+    </section>
+{% endblock %}

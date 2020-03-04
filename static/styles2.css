@@ -1,0 +1,9 @@
+body {
+    max-width: 48em;
+    margin:0 auto;
+    
+}
+.wrapper {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

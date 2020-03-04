@@ -1,39 +1,50 @@
-from flask import Flask, render_template
-from datetime import datetime
+from flask import Flask, render_template, session, url_for, request, redirect, escape
+import os
+
 app = Flask(__name__)
+
+app.secret_key = os.urandom(8)
+print(os.urandom(8))
+
+# vörulisti
+vorur = [
+        [0,'Peysa','peysa.jpg',1500],
+        [1,'Skór','skor.jpg',3500],
+        [2,'Buxur','buxur.jpg',4500],
+        [3,'Trefill','trefill.jpg',1500],
+        [4,'Jakki','jakki.jpg',13500],
+        [5,'Húfa','hufa.jpg',3550]        
+]
 
 @app.route('/')
 def homepage():
-        the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
+        karfa = []
+        fjoldi = 0
+        if 'karfa' in session:
+                karfa=session['karfa']
+                karfa.append(vorur[id])
+                fjoldi = len(karfa)
+        return render_template('index.html', vorur=vorur,fjoldi=fjoldi)
 
-        return """
-        <h1>Hello heroku</h1>
+# add - bæta í körfu
+@app.route("/add/<int:id>")
+def telja(id):
+        karfa = []
+        fjoldi = 0
+        if 'karfa' in session:
+                karfa=session['karfa']
+                karfa.append(vorur[id])
+                session['karfa'] = karfa
+                fjoldi = len(karfa)
+        else:
+                karfa.append(vorur[id])
+                session['karfa'] = karfa
+                fjoldi = len(karfa)
+        return render_template('index.html', vorur=vorur,fjoldi=fjoldi)
 
-        <p><a href="/sida2" title="Síða 2">Síða 2 </a> |
-        <a href="/sida3" title="Síða 3">Síða 3 </a></p> 
-
-        <p>It is currently real nibba hours.</p>
-
-        <img src="http://loremflickr.com/600/400/dog,cat/all">
-        """.format(time=the_time)
-
-@app.route('/sida2')
-def page2():
-        return """
-        <h1>hér er önnur síða</h1>
-
-        <p><a href="/" title="Síða 1">Síða 1 </a> |
-        <a href="/sida3" title="Síða 3">Síða 3 </a></p> 
-
-        <p>It is currently real nibba hours.</p>
-
-        <img src="http://loremflickr.com/600/400/ferret/">
-        """
-    
-@app.route('/sida3')
-def page3():
-    return render_template('sida3.html')
-
+@app.errorhandler(404)
+def pagenotfound(error):
+    return render_template('pagenotfound.html'), 404
 
 
 if __name__ == '__main__':
